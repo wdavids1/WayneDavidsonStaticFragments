@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/zero"
-        android:id="@+id/textView2"
+        android:id="@+id/productText"
         android:layout_gravity="center_horizontal|top" />
 
     <Button
