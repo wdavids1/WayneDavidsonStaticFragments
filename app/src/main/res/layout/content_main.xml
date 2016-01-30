@@ -16,7 +16,7 @@
     <fragment
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:name="edu.westga.waynedavidsonstaticfragments.DataEntryFragent"
+        android:name="edu.westga.waynedavidsonstaticfragments.DataEntryFragment"
         android:id="@+id/dataEntryFragment"
         android:layout_gravity="center_horizontal"
         tools:layout="@layout/fragment_data_entry_fragent" />
@@ -28,4 +28,12 @@
         android:id="@+id/dataDisplayFragment"
         android:layout_gravity="center_horizontal"
         tools:layout="@layout/fragment_data_display" />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="edu.westga.waynedavidsonstaticfragments.AddDisplayFragment"
+        android:id="@+id/addDisplayFragment"
+        android:layout_gravity="center_horizontal"
+        tools:layout="@layout/fragment_add_display" />
 </LinearLayout>

@@ -14,7 +14,7 @@ import android.widget.EditText;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DataEntryFragent extends Fragment {
+public class DataEntryFragment extends Fragment {
     private EditText number1;
     private EditText number2;
     private DataEntryListener listener;
@@ -23,7 +23,7 @@ public class DataEntryFragent extends Fragment {
         void onDataEntry(double number1, double number2);
     }
 
-    public DataEntryFragent() {
+    public DataEntryFragment() {
         // Required empty public constructor
     }
 
@@ -43,6 +43,14 @@ public class DataEntryFragent extends Fragment {
             }
         });
         return theView;
+    }
+
+    public double getNumber1() {
+        return Double.parseDouble(this.number1.getText().toString());
+    }
+
+    public double getNumber2() {
+        return Double.parseDouble(this.number2.getText().toString());
     }
 
     private void multiplyButtonClicked(View v) {

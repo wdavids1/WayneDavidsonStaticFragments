@@ -1,11 +1,14 @@
 package edu.westga.waynedavidsonstaticfragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -13,10 +16,16 @@ import android.widget.TextView;
  * A simple {@link Fragment} subclass.
  */
 public class DataDisplayFragment extends Fragment {
-    TextView productText;
+    private TextView productText;
     private double number1;
     private double number2;
     private double product;
+
+    private DataDisplayListener listener;
+
+    interface DataDisplayListener{
+        void onDataDisplay();
+    }
 
     public DataDisplayFragment() {
         // Required empty public constructor
@@ -29,9 +38,26 @@ public class DataDisplayFragment extends Fragment {
         // Inflate the layout for this fragment
         View theView = inflater.inflate(R.layout.fragment_data_display, container, false);
 
+        final Button addButton = (Button) theView.findViewById(R.id.button2);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                addButtonClicked(v);
+            }
+        });
+
         this.productText = (TextView) theView.findViewById(R.id.productText);
 
         return theView;
+    }
+
+    private void addButtonClicked(View v) {
+        listener.onDataDisplay();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        listener = (DataDisplayListener)context;
     }
 
     public void multiply() {

@@ -9,7 +9,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity implements DataEntryFragent.DataEntryListener {
+public class MainActivity extends AppCompatActivity implements DataEntryFragment.DataEntryListener,
+DataDisplayFragment.DataDisplayListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,5 +59,17 @@ public class MainActivity extends AppCompatActivity implements DataEntryFragent.
         displayFragment.setNumber2(number2);
         displayFragment.multiply();
         displayFragment.displayProduct();
+    }
+
+    @Override
+    public void onDataDisplay() {
+        DataEntryFragment entryFragment = (DataEntryFragment)
+                getSupportFragmentManager().findFragmentById(R.id.dataEntryFragment);
+        AddDisplayFragment addFragment = (AddDisplayFragment)
+                getSupportFragmentManager().findFragmentById(R.id.addDisplayFragment);
+        addFragment.setNumber1(entryFragment.getNumber1());
+        addFragment.setNumber2(entryFragment.getNumber2());
+        addFragment.add();
+        addFragment.displayTotal();
     }
 }

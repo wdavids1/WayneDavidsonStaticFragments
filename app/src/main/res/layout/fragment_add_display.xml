@@ -3,20 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="edu.westga.waynedavidsonstaticfragments.DataDisplayFragment">
+    tools:context="edu.westga.waynedavidsonstaticfragments.AddDisplayFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/zero"
-        android:id="@+id/productText"
-        android:layout_gravity="center_horizontal|top" />
+        android:id="@+id/totalText"
+        android:layout_gravity="center_horizontal|top"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/add"
-        android:id="@+id/button2"
-        android:layout_gravity="center_horizontal|top" />
 </LinearLayout>
